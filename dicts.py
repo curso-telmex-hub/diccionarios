@@ -37,7 +37,7 @@ p_n['par'] = []
 p_n['impar'] = []
 
 for i in range (10):
-    n_a = random.randint (1, 100)
+    n_a = random.randint (1, 20)
     # print (i, n_a)
     if n_a % 2 == 0:
         # contar pares
@@ -46,7 +46,17 @@ for i in range (10):
         # contar impares
         p_n['impar'].append (n_a)
 
+p_n_s = dict ()
+p_n_s['par'] = set ()
+p_n_s['impar'] = set ()
 
-# sobre las llaves
-for elem in p_n.items ():
-    print (elem)
+for llave in p_n.keys ():
+    # print (set(p_n[llave]), type (set(p_n[llave])))
+    # print (p_n_s[llave] | set(p_n[llave]))
+    p_n_s[llave] = p_n_s[llave] | set(p_n[llave])
+
+
+print (p_n_s)
+# # sobre las llaves
+# for elem in p_n.keys ():
+#     print (elem, set (p_n[elem]))
